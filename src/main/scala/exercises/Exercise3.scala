@@ -22,7 +22,12 @@ object Exercise3 {
   sortaSum(9, 4) → 20
   sortaSum(10, 11) → 21
    */
-  def sortaSum(a: Int, b: Int): Int = if (a + b >= 10 && a + b <= 19) 20 else a + b
+  // def sortaSum(a: Int, b: Int): Int = if (a + b >= 10 && a + b <= 19) 20 else a + b
+
+  def sortaSum(a: Int, b: Int): Int = {
+    val sum = a + b
+    if ((10 to 19).contains(sum)) 20 else sum
+  }
 
   /*
   Given a string str, if the string starts with "f" return "Fizz".
