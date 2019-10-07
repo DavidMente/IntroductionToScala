@@ -17,6 +17,8 @@ object Exercise4 {
   For multiples of 5, insert "Buzz" instead of the number
   For multiples of 3 and 5, insert "FizzBuzz" instead of the number
    */
+
+  /*
   def fizzBuzz(): List[Any] = {
     var fizzBuzzList = new ListBuffer[Any]()
     for (n <- 1 to 100) {
@@ -31,6 +33,23 @@ object Exercise4 {
       }
     }
     fizzBuzzList.toList
+  }*/
+
+  def fizzMap(x: Int): Any = {
+    if (x % 3 == 0 && x % 5 == 0) {
+      "FizzBuzz"
+    } else if (x % 3 == 0 && x % 5 != 0) {
+      "Fizz"
+    } else if (x % 3 != 0 && x % 5 == 0) {
+      "Buzz"
+    } else {
+      x
+    }
+  }
+
+  def fizzBuzz(): List[Any] = {
+    val myList: List[Int] = (1 to 100).toList
+    myList.map(c => fizzMap(c))
   }
 
 }

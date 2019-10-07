@@ -7,8 +7,6 @@ import scala.io.Source
 object Exercise6 {
 
   def main(args: Array[String]): Unit = {
-    // val resourcesPath = getClass.getResource("/reddit.json")
-    // println(resourcesPath.getPath)
     readFile("/reddit.json")
   }
 
