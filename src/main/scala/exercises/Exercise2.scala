@@ -12,12 +12,12 @@ object Exercise2 {
   stringTimes("Hi", 3) → "HiHiHi"
   stringTimes("Hi", 1) → "Hi"
   */
-  // def stringTimes(string: String, int: Int): String = string * int
-  def stringTimes(string: String, int: Int): String = {
+  def stringTimes(string: String, int: Int): String = string * int
+  /*def stringTimes(string: String, int: Int): String = {
     var newStr = ""
     for (_ <- 1 to int) newStr += string
     newStr
-  }
+  }*/
 
   /*
   Count the number of "x" in the given string (case sensitive!).
@@ -25,7 +25,10 @@ object Exercise2 {
   countXX("xxx") → 3
   countXX("xxxx") → 4
   */
-  def countX(string: String): Int = new Regex("x").findAllIn(string).length
+  def countX(string: String): Int = findPatternInString(string, "x").length
+
+  def findPatternInString(any: String, pattern: String): Regex.MatchIterator = new Regex(pattern).findAllIn(any)
+
   /*
   Count the number of "xx" in the given string (case sensitive!).
   We'll say that overlapping is not allowed, so "xxx" contains 1 "xx".
@@ -34,6 +37,12 @@ object Exercise2 {
   countXX("xxxx") → 2
   Bonus: How would you implement this function if overlapping was allowed?
   */
-  def countXX(string: String): Int = new Regex("xx").findAllIn(string).length
+  def countXX(string: String): Int = findPatternInString(string, "xx").length
+
+  /* Bonus solution powered by Max
+  def countXX(string: String): Int = {
+    return string.sliding("xx".length).count(window => window == "xx")
+  }
+  * */
 
 }
