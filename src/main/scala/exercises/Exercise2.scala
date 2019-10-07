@@ -12,7 +12,12 @@ object Exercise2 {
   stringTimes("Hi", 3) → "HiHiHi"
   stringTimes("Hi", 1) → "Hi"
   */
-  def stringTimes(string: String, int: Int): String = string * int
+  // def stringTimes(string: String, int: Int): String = string * int
+  def stringTimes(string: String, int: Int): String = {
+    var newStr = ""
+    for (_ <- 1 to int) newStr += string
+    newStr
+  }
 
   /*
   Count the number of "x" in the given string (case sensitive!).
