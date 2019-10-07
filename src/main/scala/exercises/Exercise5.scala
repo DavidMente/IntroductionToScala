@@ -46,8 +46,8 @@ object Exercise5 {
    */
   def transformStrings(list: List[String]): List[String] =
     list
-    .filterNot(_.charAt(0) == 'c')
-    .map(str => if (str.takeRight(1) == "a") str + "b" else str + "a")
+    .filterNot(_(0) == 'c')
+    .map(str => if (str.last == "a") str + "b" else str + "a")
 
   /*
   You are given a List of Objects - Dogs, Cats and Parrots. Each of them has a name and inherits from superclass Animal.
