@@ -41,7 +41,7 @@ object Exercise3 {
   def fizzString(string: String): String = {
     var result: String = ""
     if (string(0) == 'f') result += "Fizz"
-    if (string == 'b') result += "Buzz"
+    if (string.last == 'b') result += "Buzz"
     if (result == "") result += string
     result
   }
